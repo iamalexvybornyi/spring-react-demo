@@ -3,12 +3,11 @@ package com.iamalexvybornyi.backend.controller;
 import com.iamalexvybornyi.backend.model.Employee;
 import com.iamalexvybornyi.backend.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
 public class EmployeeController {
@@ -24,5 +23,16 @@ public class EmployeeController {
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    /**
+     * Add new employee.
+     *
+     * @param employee - employee object
+     * @return added employee
+     */
+    @PostMapping("employees")
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
     }
 }
