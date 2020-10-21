@@ -46,9 +46,9 @@ class ListEmployeeComponent extends Component {
             <div>
                 <h2 className = "text-center">Employees List</h2>
                 <div className="row">
-                    <button className="btn btn-primary" onClick={this.addEmployee}>Add Employee</button>
+                    <button className="btn btn-primary" style = {{marginBottom: "10px"}} onClick={this.addEmployee}>Add Employee</button>
                 </div>
-                    <div className = "row">
+                    <div className = "row" style = {{overflow: "auto", height: "400px"}}>
                         <table className = "table table-striped table-bordered">
 
                             <thead>

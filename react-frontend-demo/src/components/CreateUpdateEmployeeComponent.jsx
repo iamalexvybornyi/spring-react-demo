@@ -81,7 +81,7 @@ class CreateUpdateEmployeeComponent extends Component {
     render() {
         return (
             <div>
-                <div className = "container">
+                <div style={{marginTop: "10px"}} className = "container">
                     <div className = "row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
                             {this.getFormTitle()}
@@ -99,7 +99,7 @@ class CreateUpdateEmployeeComponent extends Component {
                                     </div>
                                     <div className = "form-group">
                                         <label>Email: </label>
-                                        <input placeholder = "Email" name = "emialId" className = "form-control"
+                                        <input placeholder = "Email" name = "emailId" className = "form-control"
                                         value = {this.state.emailId} onChange = {this.changeEmailIdHandler}></input>
                                     </div>
 
